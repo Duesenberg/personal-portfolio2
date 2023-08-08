@@ -1,8 +1,9 @@
+import React from 'react';
 import Header from './assets/components/Header';
 
 function App() {
-  const handleClick = (e: any) => {
-    switch (e.target.dataset.id) {
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    switch (e.currentTarget.dataset.id) {
       case 'about':
         const aboutRef = document.getElementById('about');
         aboutRef?.scrollIntoView({ behavior: 'smooth' });

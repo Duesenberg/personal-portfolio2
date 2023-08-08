@@ -1,5 +1,7 @@
+import React from 'react';
+
 interface HeaderProps {
-  handleClick: (params: any) => void;
+  handleClick: (params: React.MouseEvent<HTMLElement>) => void;
 }
 
 export default function Header(props: HeaderProps) {
