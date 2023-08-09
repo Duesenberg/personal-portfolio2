@@ -2,6 +2,9 @@ import React from 'react';
 import Header from './assets/components/Header';
 import Banner from './assets/components/Banner';
 import About from './assets/components/About';
+import Projects from './assets/components/Projects';
+import Contact from './assets/components/Contact';
+import Footer from './assets/components/Footer';
 
 function App() {
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
@@ -63,8 +66,11 @@ function App() {
       <div className='main'>
         <Banner />
         <About />
+        <Projects />
+        <Contact />
       </div>
-      
+
+      <Footer />
     </div>
   );
 }
