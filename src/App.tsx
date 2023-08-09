@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './assets/components/Header';
+import Banner from './assets/components/Banner';
 
 function App() {
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
@@ -59,6 +60,7 @@ function App() {
       <Header handleClick={ handleClick } />
 
       <div className='main'>
+        <Banner />
       </div>
       
     </div>
