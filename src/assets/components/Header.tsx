@@ -4,6 +4,8 @@ import MobileMenu from './MobileMenu';
 
 interface HeaderProps {
   handleClick: (params: React.MouseEvent<HTMLElement>) => void;
+  toggleDarkMode: () => void;
+  darkMode: boolean;
 }
 
 export default function Header(props: HeaderProps) {
@@ -56,7 +58,9 @@ export default function Header(props: HeaderProps) {
         scrolledDown={scrolledDown}
         handleClick={props.handleClick}
         setMenuVisible={setMenuVisible}
-        toggleMobileMenu={toggleMobileMenu} />
+        toggleMobileMenu={toggleMobileMenu}
+        toggleDarkMode={props.toggleDarkMode}
+        darkMode={props.darkMode} />
       
     <span className={'header-background absolute -z-10 top-0 left-0 w-full h-0 bg-backgroundContrastLight opacity-90 transition-all duration-1000 ease-in-out ' +(scrolledDown ? "h-28" : "h-0")} />
     </header>

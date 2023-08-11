@@ -2,6 +2,7 @@ import React from 'react';
 import openMenu from "../icons/menu-svgrepo-com.svg";
 import closeMenu from "../icons/close-svgrepo-com.svg";
 import moonIcon from '../icons/moon-svgrepo-com.svg';
+import sunIcon from '../icons/sun-svgrepo-com.svg';
 
 interface Props {
   menuVisible: boolean;
@@ -9,6 +10,8 @@ interface Props {
   toggleMobileMenu: () => void;
   handleClick: (params: React.MouseEvent<HTMLElement>) => void;
   setMenuVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  toggleDarkMode: () => void;
+  darkMode: boolean;
 }
 
 export default function MobileMenu (props: Props) {
@@ -60,9 +63,15 @@ export default function MobileMenu (props: Props) {
             data-id="contact"
             onClick={ props.handleClick }>Contact</a>
         </ul>
-        <button className="absolute top-4 left-4 cursor-pointer" aria-label='toggle page theme'>
-            <img src={moonIcon} alt="" aria-hidden
-              className={'w-10 h-10 transition-all duration-1000 ' + (props.menuVisible ? "opacity-90 invert" : "opacity-0" )} />
+        <button 
+          className="absolute top-4 left-4 cursor-pointer" 
+          aria-label='toggle page theme'
+          onClick={props.toggleDarkMode}>
+            {props.darkMode ?
+              <img src={sunIcon} alt="" aria-hidden
+              className={'w-10 h-10 transition-all duration-1000 ' + (props.menuVisible ? "opacity-90 invert" : "opacity-0" )} /> :
+              <img src={moonIcon} alt="" aria-hidden
+                className={'w-10 h-10 transition-all duration-1000 ' + (props.menuVisible ? "opacity-90 invert" : "opacity-0" )} />}
         </button>
         <span className='absolute -z-10 w-full h-full bg-backgroundContrastLight opacity-90' />
       </nav>

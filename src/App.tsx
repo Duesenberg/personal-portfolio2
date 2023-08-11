@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './assets/components/Header';
 import Banner from './assets/components/Banner';
 import About from './assets/components/About';
@@ -7,6 +7,15 @@ import Contact from './assets/components/Contact';
 import Footer from './assets/components/Footer';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => setDarkMode(!darkMode);
+
+  React.useEffect(() => {
+    if (darkMode) document.documentElement.classList.add('dark');
+    else document.documentElement.classList.remove('dark');
+  }, [darkMode])
+  
   const handleClick = (e: React.MouseEvent<HTMLElement>) => {
     switch (e.currentTarget.dataset.id) {
       case 'about':
@@ -61,7 +70,10 @@ function App() {
 
   return (
     <div className="App bg-backgroundPrimaryLight">
-      <Header handleClick={ handleClick } />
+      <Header 
+        handleClick={ handleClick } 
+        toggleDarkMode={toggleDarkMode}
+        darkMode={darkMode} />
 
       <div className='main'>
         <Banner />
