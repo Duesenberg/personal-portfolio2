@@ -13,43 +13,7 @@ export default function Header(props: HeaderProps) {
   // For toggling mobile menu when clicking on menu button
   const toggleMobileMenu = () => setMenuVisible(!menuVisible); 
 
-  // Show menu when menuVisible is true
-  React.useEffect(() => {
-    const mobileMenu = document.querySelector('.mobile-menu') as HTMLDivElement;
-    if (menuVisible) {
-      mobileMenu.classList.add('w-1/2');
-      mobileMenu.classList.remove('w-0');
-    } else {
-      mobileMenu.classList.remove('w-1/2');
-      mobileMenu.classList.add('w-0');
-    }
-  }, [menuVisible]);
-
-  // Logic for handling header appearance when scrolling down
-  React.useEffect(() => {
-    // Refs
-    const headerBg = document.querySelector('.header-background') as HTMLDivElement;
-    const headerText = document.querySelector('.header-text') as HTMLHeadingElement;
-
-
-    if (scrolledDown) {
-      // Change header background
-      headerBg.classList.remove('h-0');
-      headerBg.classList.add('h-28');
-      // Turn header text white
-      headerText.classList.remove('text-textPrimaryLight');
-      headerText.classList.add('text-textPrimaryDark');
-    } else {
-      // Change header background
-      headerBg.classList.add('h-0');
-      headerBg.classList.remove('h-28');
-      // Turn header text black
-      headerText.classList.add('text-textPrimaryLight');
-      headerText.classList.remove('text-textPrimaryDark');
-    }
-  }, [scrolledDown]);
-
-  // Check if user has scrolled down
+  // Check if user has scrolled down & change state if so
   window.onscroll = () => {
     // Refs
     const pageBody = document.querySelector('body') as HTMLBodyElement;
@@ -69,7 +33,7 @@ export default function Header(props: HeaderProps) {
         onClick={props.handleClick} />
 
       <h1 
-        className="header-text font-primary text-2xl font-bold text-textPrimaryLight transition-all duration-1000 ease-in-out"
+        className={"header-text font-primary text-2xl font-bold transition-all duration-1000 ease-in-out " + (scrolledDown ? "text-textPrimaryDark" : "text-textPrimaryLight")}
         >Pande Popovski</h1>
 
       <div className="hidden">
@@ -94,7 +58,7 @@ export default function Header(props: HeaderProps) {
         setMenuVisible={setMenuVisible}
         toggleMobileMenu={toggleMobileMenu} />
       
-    <span className='header-background absolute -z-10 top-0 left-0 w-full h-0 bg-backgroundContrastLight opacity-90 transition-all duration-1000 ease-in-out' />
+    <span className={'header-background absolute -z-10 top-0 left-0 w-full h-0 bg-backgroundContrastLight opacity-90 transition-all duration-1000 ease-in-out ' +(scrolledDown ? "h-28" : "h-0")} />
     </header>
   )
 };

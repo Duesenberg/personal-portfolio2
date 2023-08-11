@@ -14,35 +14,6 @@ interface Props {
 export default function MobileMenu (props: Props) {
   const menuRef = React.useRef() as React.RefObject<HTMLDivElement>;
 
-  // Invert button color when user scrolls down
-  React.useEffect(() => {
-    // Refs
-    const openButton = document.querySelector('.button-open');
-    const closeButton = document.querySelector('.button-close');
-
-    if (props.scrolledDown) {
-      // Invert button color
-      openButton?.classList.add('invert');
-      closeButton?.classList.add('invert');
-    } else {
-      // Remove invert from button color
-      openButton?.classList.remove('invert');
-      closeButton?.classList.remove('invert');
-    }
-  }, [props.scrolledDown]);
-
-  // This is written to prevent the buttons from changing back after
-  // showing/hiding menu when scrolled down (because it re-renders them)
-  React.useEffect(() => {
-    // Refs
-    const openButton = document.querySelector('.button-open');
-    const closeButton = document.querySelector('.button-close');
-    if (props.scrolledDown) {
-      openButton?.classList.add('invert');
-      closeButton?.classList.add('invert');
-    }
-  }, [props.menuVisible]);
-
   // For hiding menu when user clicks anywhere outside menu
   React.useEffect(() => {
     const handler = (e: any) => {
@@ -50,7 +21,6 @@ export default function MobileMenu (props: Props) {
         props.setMenuVisible(false);
       } 
     }
-
     document.addEventListener('mousedown', handler);
 
     return(() => {
@@ -64,19 +34,19 @@ export default function MobileMenu (props: Props) {
         { props.menuVisible ? 
         <img 
           src={ closeMenu } alt="" aria-hidden
-          className="button-close w-10 h-auto transition-all duration-1000 ease-in-out" />  : 
+          className={"button-close w-10 h-auto transition-all duration-1000 ease-in-out " + (props.scrolledDown ? "invert" : "")} />  : 
         <img 
           src={ openMenu } alt="" aria-hidden
-          className="button-open w-10 h-auto transition-all duration-1000 ease-in-out" /> }
+          className={"button-close w-10 h-auto transition-all duration-1000 ease-in-out " + (props.scrolledDown ? "invert" : "")} /> }
       </button>
 
       <nav 
-        className="mobile-menu absolute top-28 bottom-0 right-0 w-0 h-[calc(100vh-112px)] transition-all duration-1000 ease-in-out overflow-hidden flex flex-col justify-start">
+        className={"mobile-menu absolute top-28 bottom-0 right-0 h-[calc(100vh-112px)] transition-all duration-1000 ease-in-out overflow-hidden flex flex-col justify-start " + (props.menuVisible ? "w-1/2" : "w-0")}>
         <h1
-          className='text-2xl font-bold text-textContrastLight text-end m-4'
+          className={'text-2xl font-bold text-textContrastLight text-end m-4 transition-all duration-1000 ' + (props.menuVisible ? "" : "opacity-0")}
           >Menu</h1>
 
-        <ul className="flex flex-col items-end py-4">
+        <ul className={"flex flex-col items-end py-4 transition-all duration-1000 " + (props.menuVisible ? "" : "opacity-0")}>
           <a 
             className="navlink" 
             data-id="about"
@@ -92,7 +62,7 @@ export default function MobileMenu (props: Props) {
         </ul>
         <button className="absolute top-4 left-4 cursor-pointer" aria-label='toggle page theme'>
             <img src={moonIcon} alt="" aria-hidden
-              className='w-10 h-10 invert' />
+              className={'w-10 h-10 transition-all duration-1000 ' + (props.menuVisible ? "opacity-90 invert" : "opacity-0" )} />
         </button>
         <span className='absolute -z-10 w-full h-full bg-backgroundContrastLight opacity-90' />
       </nav>
