@@ -60,7 +60,7 @@ function App() {
   })
 
   return (
-    <div className="App">
+    <div className="App bg-backgroundPrimaryLight">
       <Header handleClick={ handleClick } />
 
       <div className='main'>
