@@ -1,6 +1,7 @@
 import logoIcon from '../icons/mariposa-logo.svg';
 import React, { useState } from 'react';
 import MobileMenu from './MobileMenu';
+import DesktopNav from './DesktopNav';
 
 interface HeaderProps {
   handleClick: (params: React.MouseEvent<HTMLElement>) => void;
@@ -26,10 +27,10 @@ export default function Header(props: HeaderProps) {
   }
 
   return(
-    <header className="bg-transparent sticky top-0 left-0 h-28 flex justify-between items-center p-4">
+    <header className="bg-transparent sticky top-0 left-0 h-24 flex justify-between items-center p-4">
       <img 
         src={logoIcon}
-        className="w-14 h-auto" 
+        className="w-14 h-auto cursor-pointer" 
         aria-label="scroll to top"
         data-id="header"
         onClick={props.handleClick} />
@@ -38,20 +39,11 @@ export default function Header(props: HeaderProps) {
         className={"header-text font-primary text-2xl font-bold transition-all duration-1000 ease-in-out " + (scrolledDown ? "text-textPrimaryDark" : "text-textPrimaryLight")}
         >Pande Popovski</h1>
 
-      <div className="hidden">
-        <button 
-          className="about" 
-          data-id="about"
-          onClick={props.handleClick}>about</button>
-        <button 
-          className="projects" 
-          data-id="projects"
-          onClick={props.handleClick}>projects</button>
-        <button 
-          className="contact" 
-          data-id="contact"
-          onClick={props.handleClick}>contact</button>
-      </div>
+      <DesktopNav
+        handleClick={props.handleClick}
+        toggleDarkMode={props.toggleDarkMode}
+        darkMode={props.darkMode}
+        scrolledDown={scrolledDown} />
 
       <MobileMenu
         menuVisible={menuVisible}
@@ -62,7 +54,7 @@ export default function Header(props: HeaderProps) {
         toggleDarkMode={props.toggleDarkMode}
         darkMode={props.darkMode} />
       
-    <span className={'header-background absolute -z-10 top-0 left-0 w-full h-0 bg-backgroundContrastLight opacity-90 transition-all duration-1000 ease-in-out ' +(scrolledDown ? "h-28" : "h-0")} />
+    <span className={'header-background absolute -z-10 top-0 left-0 w-full h-0 bg-backgroundContrastLight opacity-90 transition-all duration-1000 ease-in-out ' +(scrolledDown ? "h-24" : "h-0")} />
     </header>
   )
 };

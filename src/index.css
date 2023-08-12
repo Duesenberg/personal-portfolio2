@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.navlink {
-  @apply py-2 mx-4 text-white text-xl cursor-pointer text-end flex flex-col after:w-0 after:h-1 after:bg-accentSecondaryLight after:transition-all after:duration-500 after:ease-in-out hover:after:w-full;
+.navLinkMobile {
+  @apply py-2 mx-4 text-white text-xl cursor-pointer text-end flex flex-col after:w-0 after:h-1 after:bg-accentSecondaryDark after:transition-all after:duration-500 after:ease-in-out hover:after:w-full;
+}
+
+.navLinkDesktop {
+  @apply py-2 mx-4 text-xl font-semibold cursor-pointer text-end flex flex-col after:w-0 after:h-1  after:transition-all after:duration-500 after:ease-in-out hover:after:w-full transition-all duration-1000 ease-in-out 
 }

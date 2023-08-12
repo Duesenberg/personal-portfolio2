@@ -32,35 +32,38 @@ export default function MobileMenu (props: Props) {
   });
 
   return(
-    <div ref={menuRef}>
-      <button onMouseDown={props.toggleMobileMenu} aria-label='menu button'>
+    <div ref={menuRef} className='md:hidden'>
+      <button onMouseDown={props.toggleMobileMenu} aria-label='open or close menu button'>
         { props.menuVisible ? 
         <img 
-          src={ closeMenu } alt="" aria-hidden
+          src={ closeMenu } alt="close menu" aria-hidden
           className={"button-close w-10 h-auto transition-all duration-1000 ease-in-out " + (props.scrolledDown ? "invert" : "")} />  : 
         <img 
-          src={ openMenu } alt="" aria-hidden
+          src={ openMenu } alt="open menu" aria-hidden
           className={"button-close w-10 h-auto transition-all duration-1000 ease-in-out " + (props.scrolledDown ? "invert" : "")} /> }
       </button>
 
       <nav 
-        className={"mobile-menu absolute top-28 bottom-0 right-0 h-[calc(100vh-112px)] transition-all duration-1000 ease-in-out overflow-hidden flex flex-col justify-start " + (props.menuVisible ? "w-1/2" : "w-0")}>
+        className={"mobile-menu absolute top-24 bottom-0 right-0 h-[calc(100vh-96px)] transition-all duration-1000 ease-in-out overflow-hidden flex flex-col justify-start " + (props.menuVisible ? "w-1/2" : "w-0")}>
         <h1
           className={'text-2xl font-bold text-textContrastLight text-end m-4 transition-all duration-1000 ' + (props.menuVisible ? "" : "opacity-0")}
           >Menu</h1>
 
         <ul className={"flex flex-col items-end py-4 transition-all duration-1000 " + (props.menuVisible ? "" : "opacity-0")}>
           <a 
-            className="navlink" 
+            className="navLinkMobile" 
             data-id="about"
+            aria-label='go to about'
             onClick={ props.handleClick }>About</a>
           <a 
-            className="navlink"
+            className="navLinkMobile"
             data-id="projects" 
+            aria-label='go to projects'
             onClick={ props.handleClick }>Projects</a>
           <a 
-            className="navlink"
+            className="navLinkMobile"
             data-id="contact"
+            aria-label='go to contact'
             onClick={ props.handleClick }>Contact</a>
         </ul>
         <button 
@@ -68,9 +71,9 @@ export default function MobileMenu (props: Props) {
           aria-label='toggle page theme'
           onClick={props.toggleDarkMode}>
             {props.darkMode ?
-              <img src={sunIcon} alt="" aria-hidden
+              <img src={sunIcon} alt="switch to light theme" aria-hidden
               className={'w-10 h-10 transition-all duration-1000 ' + (props.menuVisible ? "opacity-90 invert" : "opacity-0" )} /> :
-              <img src={moonIcon} alt="" aria-hidden
+              <img src={moonIcon} alt="switch to dark theme" aria-hidden
                 className={'w-10 h-10 transition-all duration-1000 ' + (props.menuVisible ? "opacity-90 invert" : "opacity-0" )} />}
         </button>
         <span className='absolute -z-10 w-full h-full bg-backgroundContrastLight opacity-90' />
