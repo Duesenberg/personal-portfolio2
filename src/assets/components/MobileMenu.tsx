@@ -33,6 +33,7 @@ export default function MobileMenu (props: Props) {
 
   return(
     <div ref={menuRef} className='md:hidden'>
+      {/* Open/Close menu button */}
       <button onMouseDown={props.toggleMobileMenu} aria-label='open or close menu button'>
         { props.menuVisible ? 
         <img 
@@ -43,6 +44,7 @@ export default function MobileMenu (props: Props) {
           className={"button-close w-10 h-auto transition-all duration-1000 ease-in-out " + (props.scrolledDown ? "invert" : "dark:invert")} /> }
       </button>
 
+      {/* Mobile Menu */}
       <nav 
         className={"mobile-menu absolute top-24 bottom-0 right-0 h-[calc(100vh-96px)] transition-all duration-1000 ease-in-out overflow-hidden flex flex-col justify-start " + (props.menuVisible ? "w-1/2" : "w-0")}>
         <h1
@@ -76,6 +78,7 @@ export default function MobileMenu (props: Props) {
               <img src={moonIcon} alt="switch to dark theme" aria-hidden
                 className={'w-10 h-10 transition-all duration-1000 ' + (props.menuVisible ? "opacity-90 invert" : "opacity-0" )} />}
         </button>
+        {/* Mobile menu background */}
         <span className='absolute -z-10 w-full h-full bg-backgroundContrastLight opacity-90' />
       </nav>
     </div>

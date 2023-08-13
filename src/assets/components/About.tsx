@@ -92,11 +92,13 @@ export default function About() {
     <section 
       className="about relative z-0 flex flex-col" 
       id="about">
+        {/* Laptop graphic */}
         <img 
           className="w-1/2 self-end mx-6 mt-16 max-w-sm"
           src={laptopIcon} 
           alt="image of a laptop" />
 
+        {/* Description about me */}
         <section className="flex flex-col" aria-label="about me">
           <h1 className="headerText">About Me</h1>
 
@@ -118,6 +120,7 @@ export default function About() {
           </p>
         </section>
 
+        {/* List of skills */}
         <section 
           aria-label="list of skills"
           className="absolute w-full overflow-hidden flex justify-between">

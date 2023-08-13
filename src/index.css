@@ -4,31 +4,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Navigation links for Mobile */
 .navLinkMobile {
   @apply py-2 mx-4 text-white text-xl cursor-pointer text-end flex flex-col after:w-0 after:h-1 after:bg-accentSecondaryDark after:transition-all after:duration-500 after:ease-in-out hover:after:w-full;
 }
 
+/* Navigation links for larger screens */
 .navLinkDesktop {
   @apply py-2 mx-4 text-xl font-semibold cursor-pointer text-end flex flex-col after:w-0 after:h-1  after:transition-all after:duration-500 after:ease-in-out hover:after:w-full transition-all duration-1000 ease-in-out 
 }
 
+/* Style for headers */
 .headerText {
   @apply mx-6 mb-8 text-2xl font-bold text-textPrimaryLight dark:text-textPrimaryDark transition-colors duration-1000 ease-in-out
 }
 
+/* Style for text (aligned to the left) */
 .text {
   @apply w-5/6 mx-6 mb-4 text-lg text-textSecondaryLight dark:text-textSecondaryDark transition-colors duration-1000 ease-in-out
 }
 
+/* Style for text (aligned to the right) */
 .textRight {
   @apply w-5/6  mx-6 mb-4 text-lg text-right self-end text-textSecondaryLight dark:text-textSecondaryDark transition-colors duration-1000 ease-in-out
 }
 
+/* Skill icons */
 .skillIcon {
   @apply w-1/6 md:w-28 h-auto opacity-50 transition-all duration-1000 ease-in-out dark:invert animate-fadeInOut
 }
 
-/* SCROLLBAR */
+/* Styles for scrollbar */
 /* width */
 ::-webkit-scrollbar {
   width: 10px;

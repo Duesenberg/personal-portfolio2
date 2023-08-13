@@ -11,11 +11,12 @@ interface Props {
 export default function desktopNav (props: Props) {
   return (
     <nav className="hidden md:block mr-20">
+      {/* Nav links */}
       <ul className="flex items-center">
         <li>
           <a 
             className={"about navLinkDesktop " + 
-            (props.scrolledDown ? "text-textContrastLight after:bg-accentSecondaryDark" : "text-textPrimaryLight after:bg-accentSecondaryLight")} 
+            (props.scrolledDown ? "text-textContrastLight after:bg-accentSecondaryDark" : "text-textPrimaryLight after:bg-accentSecondaryLight dark:text-textContrastLight dark:after:bg-accentSecondaryDark")} 
             data-id="about"
             aria-label='go to about'
             onClick={props.handleClick}>About</a>
@@ -23,7 +24,7 @@ export default function desktopNav (props: Props) {
         <li>
           <a 
             className={"projects navLinkDesktop " + 
-            (props.scrolledDown ? "text-textContrastLight after:bg-accentSecondaryDark" : "text-textPrimaryLight after:bg-accentSecondaryLight")} 
+            (props.scrolledDown ? "text-textContrastLight after:bg-accentSecondaryDark" : "text-textPrimaryLight after:bg-accentSecondaryLight dark:text-textContrastLight dark:after:bg-accentSecondaryDark")} 
             data-id="projects"
             aria-label='go to projects'
             onClick={props.handleClick}>Projects</a>
@@ -31,19 +32,20 @@ export default function desktopNav (props: Props) {
         <li>
           <a 
             className={"contact navLinkDesktop " + 
-            (props.scrolledDown ? "text-textContrastLight after:bg-accentSecondaryDark" : "text-textPrimaryLight after:bg-accentSecondaryLight")}
+            (props.scrolledDown ? "text-textContrastLight after:bg-accentSecondaryDark" : "text-textPrimaryLight after:bg-accentSecondaryLight dark:text-textContrastLight dark:after:bg-accentSecondaryDark")}
             data-id="contact"
             aria-label='go to contact'
             onClick={props.handleClick}>Contact</a>
         </li>
       </ul>
+      {/* Light/Dark mode button */}
       <button 
           className="absolute top-7 right-9 cursor-pointer" 
           aria-label='toggle page theme'
           onClick={props.toggleDarkMode}>
             {props.darkMode ?
               <img src={sunIcon} alt="switch to light theme" aria-hidden
-              className={'w-9 h-9 transition-all duration-1000 ' + (props.scrolledDown ? " invert" : "" )} /> :
+              className={'w-9 h-9 transition-all duration-1000 ' + (props.scrolledDown ? " invert" : "dark:invert" )} /> :
               <img src={moonIcon} alt="switch to dark theme" aria-hidden
                 className={'w-9 h-9 transition-all duration-1000 ' + (props.scrolledDown ? " invert" : "" )} />}
         </button>
