@@ -90,16 +90,16 @@ export default function About() {
 
   return(
     <section 
-      className="about relative z-0 flex flex-col" 
+      className="about relative z-0 flex flex-col md:flex-row-reverse" 
       id="about">
         {/* Laptop graphic */}
         <img 
-          className="w-1/2 self-end mx-6 mt-16 max-w-sm"
+          className="w-1/2 self-end mx-6 mt-16 max-w-sm md:self-start md:mt-0"
           src={laptopIcon} 
           alt="image of a laptop" />
 
         {/* Description about me */}
-        <section className="flex flex-col" aria-label="about me">
+        <section className="flex flex-col md:self-center" aria-label="about me">
           <h1 className="headerText">About Me</h1>
 
           <p className="text">
@@ -123,9 +123,9 @@ export default function About() {
         {/* List of skills */}
         <section 
           aria-label="list of skills"
-          className="absolute w-full overflow-hidden flex justify-between">
+          className="absolute w-full overflow-hidden flex justify-between md:max-w-sm md:mx-6 md:my-16">
             <div 
-              className="mx-10 my-2 w-full max-h-96 gap-6 flex flex-row justify-between content-around flex-wrap flex-1">
+              className="mx-10 my-2 w-full max-h-96 gap-2 flex flex-row justify-between content-around flex-wrap flex-1">
                 {skills.map((skill) => {
                   return (
                     <img 

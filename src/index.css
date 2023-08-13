@@ -26,12 +26,12 @@
 
 /* Style for text (aligned to the right) */
 .textRight {
-  @apply w-5/6  mx-6 mb-4 text-lg text-right self-end text-textSecondaryLight dark:text-textSecondaryDark transition-colors duration-1000 ease-in-out
+  @apply w-5/6  mx-6 mb-4 text-lg text-right self-end text-textSecondaryLight dark:text-textSecondaryDark transition-colors duration-1000 ease-in-out md:text-left md:self-start
 }
 
 /* Skill icons */
 .skillIcon {
-  @apply w-1/6 md:w-28 h-auto opacity-50 transition-all duration-1000 ease-in-out dark:invert animate-fadeInOut
+  @apply w-1/6 h-auto opacity-50 transition-all duration-1000 ease-in-out dark:invert animate-fadeInOut md:w-12 md:m-2
 }
 
 /* Styles for scrollbar */
