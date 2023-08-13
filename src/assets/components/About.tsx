@@ -40,7 +40,7 @@ export default function About() {
           alt="image of a laptop" />
 
         {/* Description about me */}
-        <section className="flex flex-col md:self-center" aria-label="about me">
+        <section className="flex flex-col md:self-center mb-8" aria-label="about me">
           <h1 className="headerText">About Me</h1>
 
           <p className="text">
