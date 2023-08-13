@@ -8,6 +8,7 @@ import sassIcon from '../icons/sass.svg';
 import reactIcon from '../icons/react.svg';
 import webpackIcon from '../icons/webpack.svg';
 import gitIcon from '../icons/git.svg';
+import laptopIcon from '../icons/laptop-svgrepo-com.svg';
 import uniqid from 'uniqid';
 
 export default function About() {
@@ -88,25 +89,23 @@ export default function About() {
   });
 
   return(
-    <section className="about" id="about">
-      <div className="about-wrapper">
+    <section 
+      className="about relative z-0 flex flex-col" 
+      id="about">
+        <img 
+          className="w-1/2 self-end mx-6 mt-16 max-w-sm"
+          src={laptopIcon} 
+          alt="image of a laptop" />
 
-        <section className="top">
-          <h1 className="about-title">About Me</h1>
+        <section className="flex flex-col" aria-label="about me">
+          <h1 className="headerText">About Me</h1>
 
           <p className="text">
-            I'm an Electrical Engineer and working as a Teaching Assistant in 
-            the field. One of my hobbies I am really passionate about is coding,
-            including Web Development and Machine Learning.
+            I'm an Electrical Engineer with a passsion for all things programming related.
+            I'm especially interested in Web Development and Machine Learning.
           </p>
 
-          <p className="text">
-            I have a broad understanding of HTML, CSS, Javascript and more. I enjoy
-            working on personal projects, finding some coding buddies to work on a 
-            project together, and contributing to open-source projects.
-          </p>
-
-          <p className="text">
+          <p className="textRight">
             I always strive to create something unique that stands out and makes
             an impact.
           </p>
@@ -119,30 +118,24 @@ export default function About() {
           </p>
         </section>
 
-        <section className="bottom" aria-label="list of skills">
-          <div className="skills-carousel">
+        <section 
+          aria-label="list of skills"
+          className="absolute w-full overflow-hidden flex justify-between">
             <div 
-              className="container" 
-              onMouseDown={handleMouseDown} 
-              onMouseMove={handleMouseMove}>
+              className="mx-10 my-2 w-full max-h-96 gap-6 flex flex-row justify-between content-around flex-wrap flex-1">
                 {skills.map((skill) => {
                   return (
-                    <button className="skill" key={uniqid()} id={skill.index}>
-                      <img 
-                        src={skill.iconURL} 
-                          alt={skill.name} 
-                          className="icon"
-                          draggable='false'/>
-                      <p className="text">{skill.index}. {skill.name}</p>
-                    </button>
+                    <img 
+                      key={uniqid()} 
+                      id={skill.index}
+                      src={skill.iconURL} 
+                      alt={skill.name} 
+                      className="skillIcon"
+                      draggable='false'/>
                   )
                 })}
             </div>
-          </div>
-          <div className="shadow-overlay-left" />
-          <div className="shadow-overlay-right" />
         </section>
-      </div>
     </section>
   )
 };

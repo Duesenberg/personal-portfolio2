@@ -37,10 +37,10 @@ export default function MobileMenu (props: Props) {
         { props.menuVisible ? 
         <img 
           src={ closeMenu } alt="close menu" aria-hidden
-          className={"button-close w-10 h-auto transition-all duration-1000 ease-in-out " + (props.scrolledDown ? "invert" : "")} />  : 
+          className={"button-close w-10 h-auto transition-all duration-1000 ease-in-out " + (props.scrolledDown ? "invert" : "dark:invert")} />  : 
         <img 
           src={ openMenu } alt="open menu" aria-hidden
-          className={"button-close w-10 h-auto transition-all duration-1000 ease-in-out " + (props.scrolledDown ? "invert" : "")} /> }
+          className={"button-close w-10 h-auto transition-all duration-1000 ease-in-out " + (props.scrolledDown ? "invert" : "dark:invert")} /> }
       </button>
 
       <nav 

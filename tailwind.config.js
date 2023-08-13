@@ -9,7 +9,7 @@ export default {
     extend: {
       colors: {
         textPrimaryLight: '#000000',
-        textSecondaryLight: '#414141',
+        textSecondaryLight: '#262626',
         textContrastLight: '#FFFFFF',
 
         textPrimaryDark: '#FFFFFF',
@@ -31,7 +31,17 @@ export default {
       },
       fontFamily: {
         primary: ['Inter']
-      }
+      },
+      animation: {
+        'fadeInOut': 'carousel 1.5s linear',
+      },
+      keyframes: {
+        carousel: {
+          '0%': { opacity: '0' },
+          '50%': { opacity: '0.35' } ,
+          '100%': { opacity: '0.5' } ,
+        }
+      },
     },
   },
   plugins: [],

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Header from './assets/components/Header';
-import Banner from './assets/components/Banner';
 import About from './assets/components/About';
 import Projects from './assets/components/Projects';
 import Contact from './assets/components/Contact';
@@ -69,14 +68,13 @@ function App() {
   })
 
   return (
-    <div className="App bg-backgroundPrimaryLight">
+    <div className="App bg-backgroundPrimaryLight dark:bg-backgroundPrimaryDark transition-colors duration-1000 ease-in-out">
       <Header 
         handleClick={ handleClick } 
         toggleDarkMode={toggleDarkMode}
         darkMode={darkMode} />
 
       <div className='main'>
-        <Banner />
         <About />
         <Projects />
         <Contact />

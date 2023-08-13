@@ -27,7 +27,7 @@ export default function Header(props: HeaderProps) {
   }
 
   return(
-    <header className="bg-transparent sticky top-0 left-0 h-24 flex justify-between items-center p-4">
+    <header className="bg-transparent sticky z-10 top-0 left-0 h-24 flex justify-between items-center p-4">
       <img 
         src={logoIcon}
         className="w-14 h-auto cursor-pointer" 
@@ -36,7 +36,7 @@ export default function Header(props: HeaderProps) {
         onClick={props.handleClick} />
 
       <h1 
-        className={"header-text font-primary text-2xl font-bold transition-all duration-1000 ease-in-out " + (scrolledDown ? "text-textPrimaryDark" : "text-textPrimaryLight")}
+        className={"header-text font-primary text-2xl font-bold transition-all duration-1000 ease-in-out " + (scrolledDown ? "text-textPrimaryDark" : "text-textPrimaryLight dark:text-textPrimaryDark")}
         >Pande Popovski</h1>
 
       <DesktopNav
