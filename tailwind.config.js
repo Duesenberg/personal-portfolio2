@@ -43,7 +43,7 @@ export default {
         }
       },
       spacing: {
-        '4/5vw': '82vw',
+        '4/5vw': '80.5vw',
         'hlg': '32rem',
       },
       borderRadius: {
