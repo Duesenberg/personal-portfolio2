@@ -1,4 +1,3 @@
-import { useState } from "react"
 import htmlIcon from '../icons/language-html5.svg';
 import cssIcon from '../icons/language-css3.svg';
 import jsIcon from '../icons/language-javascript.svg';
@@ -9,84 +8,26 @@ import reactIcon from '../icons/react.svg';
 import webpackIcon from '../icons/webpack.svg';
 import gitIcon from '../icons/git.svg';
 import laptopIcon from '../icons/laptop-svgrepo-com.svg';
+import tailwindIcon from '../icons/tailwind-css-svgrepo-com.svg';
+import tsIcon from '../icons/language-typescript.svg';
+import viteIcon from '../icons/vite.svg';
 import uniqid from 'uniqid';
 
 export default function About() {
-  const [mouseIsDown, setMouseIsDown] = useState(false);
-  const [initialMousePos, setInitialMousePos] = useState(0);
-  const [currentMousePos, setCurrentMousePos] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
   const skills = [
-    {
-      index: '1',
-      name: 'HTML',
-      iconURL: htmlIcon
-    },
-    {
-      index: '2',
-      name: 'CSS',
-      iconURL: cssIcon
-    },
-    {
-      index: '3',
-      name: 'JAVASCRIPT',
-      iconURL: jsIcon
-    },
-    {
-      index: '4',
-      name: 'REACT',
-      iconURL: reactIcon
-    },
-    {
-      index: '5',
-      name: 'SASS',
-      iconURL: sassIcon
-    },
-    {
-      index: '6',
-      name: 'GIT',
-      iconURL: gitIcon
-    },
-    {
-      index: '7',
-      name: 'NPM',
-      iconURL: npmIcon
-    },
-    {
-      index: '8',
-      name: 'WEBPACK',
-      iconURL: webpackIcon
-    },
-    {
-      index: '9',
-      name: 'JEST',
-      iconURL: jestIcon
-    },
+    { index: '1', name: 'HTML', iconURL: htmlIcon },
+    { index: '2', name: 'CSS', iconURL: cssIcon },
+    { index: '3', name: 'JAVASCRIPT', iconURL: jsIcon },
+    { index: '3', name: 'TYPESCRIPT', iconURL: tsIcon },
+    { index: '4', name: 'REACT', iconURL: reactIcon },
+    { index: '5', name: 'SASS', iconURL: sassIcon },
+    { index: '6', name: 'TAILWIND', iconURL: tailwindIcon },
+    { index: '7', name: 'GIT', iconURL: gitIcon },
+    { index: '8', name: 'NPM', iconURL: npmIcon },
+    { index: '9', name: 'WEBPACK', iconURL: webpackIcon },
+    { index: '10', name: 'VITE', iconURL: viteIcon },
+    { index: '11', name: 'JEST', iconURL: jestIcon },
   ];
-
-  //When mouse is clicked down on the carousel
-  const handleMouseDown = (e: any) => {
-    const carouselParentRef = document.querySelector('.skills-carousel') as HTMLElement;
-    setMouseIsDown(true);
-    setInitialMousePos(e.clientX);
-    setCurrentMousePos(e.clientX);
-    setScrollLeft(carouselParentRef.scrollLeft);
-  }
-
-  const handleMouseMove = (e: any) => {
-    if (mouseIsDown) {
-      setCurrentMousePos(e.clientX);
-      const carouselParentRef = document.querySelector('.skills-carousel') as HTMLElement;
-      carouselParentRef.scrollLeft = scrollLeft - (currentMousePos - initialMousePos);
-    }
-  }
-  
-  window.addEventListener('mouseup', () => {
-    setMouseIsDown(false);
-    setInitialMousePos(0);
-    setCurrentMousePos(0);
-  });
 
   return(
     <section 
@@ -125,7 +66,7 @@ export default function About() {
           aria-label="list of skills"
           className="absolute w-full overflow-hidden flex justify-between md:max-w-sm md:mx-6 md:my-16">
             <div 
-              className="mx-10 my-2 w-full max-h-96 gap-2 flex flex-row justify-between content-around flex-wrap flex-1">
+              className="mx-10 my-2 w-full max-h-96 gap-4 md:gap-0 flex flex-row justify-around content-around flex-wrap flex-1">
                 {skills.map((skill) => {
                   return (
                     <img 
