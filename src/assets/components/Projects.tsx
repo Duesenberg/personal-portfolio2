@@ -13,7 +13,7 @@ export default function Projects() {
       <h1 className="headerText">Projects</h1>
       
       <div 
-        className="flex flex-col gap-20 items-center">
+        className="flex flex-col md:flex-row md:justify-center md:flex-wrap gap-20 items-center">
 
         <section className="project" aria-label="social media clone">
           <img 

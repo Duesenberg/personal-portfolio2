@@ -45,6 +45,7 @@ export default {
       spacing: {
         '4/5vw': '80.5vw',
         'hlg': '32rem',
+        'hsm': '24rem',
       },
       borderRadius: {
         'br50': '50%',

@@ -36,7 +36,7 @@
 
 /* Style for each project section */
 .project {
-  @apply relative w-4/5 max-w-lg flex flex-col gap-4 items-center
+  @apply relative w-4/5 max-w-lg md:max-w-sm flex flex-col gap-4 items-center
 }
 
 /* Project photos */
@@ -46,7 +46,7 @@
 
 /* Project info div */
 .projectInfo {
-  @apply z-0 opacity-0 rounded-br50 hover:opacity-100 hover:rounded-none overflow-hidden flex flex-col items-center justify-center gap-2 sm:gap-4 h-4/5vw max-h-hlg shadow-md bg-backgroundSecondaryLight dark:bg-backgroundSecondaryDark transition-all duration-1000 ease-in-out
+  @apply z-0 opacity-0 rounded-br50 hover:opacity-100 hover:rounded-none overflow-hidden flex flex-col items-center justify-center gap-2 sm:gap-4 h-4/5vw max-h-hlg md:max-h-hsm shadow-md bg-backgroundSecondaryLight dark:bg-backgroundSecondaryDark transition-all duration-1000 ease-in-out
 }
 
 /* Info wrapper */
