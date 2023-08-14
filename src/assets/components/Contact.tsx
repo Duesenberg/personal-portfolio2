@@ -5,7 +5,7 @@ import InputForm from './InputForm';
 export default function Contact() {
   return(
     <section className="contactSection" aria-label="contact" id='contact'>
-      <div className="flex flex-col items-center mb-8">
+      <div className="flex flex-col items-center mb-8 p-4">
         <h1 className="headerText">Social</h1>
         <div className='flex flex-wrap justify-center gap-4'>
           <a 
