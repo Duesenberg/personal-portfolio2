@@ -49,6 +49,9 @@ export default {
       },
       borderRadius: {
         'br50': '50%',
+      },
+      borderWidth: {
+        '1': '1px',
       }
     },
   },

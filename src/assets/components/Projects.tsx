@@ -9,7 +9,7 @@ import toDoList from '../images/todo-list.png';
 export default function Projects() {
   
   return(
-    <section aria-label="projects" id='projects'>
+    <section className='mb-8' aria-label="projects" id='projects'>
       <h1 className="headerText">Projects</h1>
       
       <div 

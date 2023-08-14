@@ -16,7 +16,7 @@
 
 /* Style for headers */
 .headerText {
-  @apply mx-6 mb-8 text-2xl font-bold text-textPrimaryLight dark:text-textPrimaryDark transition-colors duration-1000 ease-in-out
+  @apply mx-6 mb-8 text-4xl font-bold text-textPrimaryLight dark:text-textPrimaryDark transition-colors duration-1000 ease-in-out
 }
 
 /* Style for text (aligned to the left) */
@@ -72,6 +72,40 @@
 .button {
   @apply rounded-full px-6 py-2 text-lg text-textContrastLight bg-accentPrimaryLight hover:bg-accentSecondaryLight dark:bg-accentPrimaryDark dark:hover:bg-accentSecondaryDark transition-colors duration-1000 ease-in-out
 }
+
+.contactSection {
+  @apply flex flex-col justify-between mx-4
+}
+
+.socialLink {
+  @apply flex flex-col items-center
+}
+
+.socialLinkText {
+  @apply pb-2 mx-4 text-textPrimaryLight text-xl font-semibold cursor-pointer text-end flex flex-col after:w-0 after:h-1 after:bg-accentSecondaryLight after:transition-all after:duration-500 after:ease-in-out hover:after:w-full dark:text-textPrimaryDark dark:after:bg-accentSecondaryDark;
+}
+
+.socialIcon {
+  @apply w-36 h-auto transition-all duration-1000 ease-in-out dark:invert animate-fadeInOut
+}
+
+.inputField {
+  @apply flex flex-col
+}
+
+.inputFieldText {
+  @apply px-4 py-2 my-2 w-full border-1 outline-2 focus:outline-2 focus:outline hover:bg-gray-100 border-textSecondaryLight text-lg text-textSecondaryLight
+}
+
+.inputLabel {
+  @apply w-full text-lg text-textSecondaryLight dark:text-textSecondaryDark transition-colors duration-1000 ease-in-out
+}
+
+.inputForm {
+  @apply flex flex-col gap-4 p-4 w-4/5 max-w-md shadow-md bg-backgroundSecondaryLight dark:bg-backgroundSecondaryDark transition-all duration-1000 ease-in-out
+}
+
+.contactMe { @apply p-4 }
 
 /* Styles for scrollbar */
 /* width */
