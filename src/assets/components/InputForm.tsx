@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const ContactForm: React.FC = () => {
+  const[messageSent, setMessageSent] = useState(false);
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -19,8 +20,10 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Here you can add code to handle the form submission
-    // For example, sending the form data to a server or an API
+    setFullName('');
+    setEmail('');
+    setMessage('');
+    setMessageSent(true);
   };
 
   return (
@@ -63,6 +66,7 @@ const ContactForm: React.FC = () => {
           />
         </div>
         <button className='button w-max self-center' type="submit">Send</button>
+        <span className={'text-lg text-green-600 self-center ' + (messageSent ? 'visible' : 'invisible')}>Sent &#x2713;</span>
       </form>
     </div>
   );
