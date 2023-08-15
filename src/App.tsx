@@ -43,7 +43,6 @@ function App() {
     const aboutRef = document.getElementById('about');
     const projectsRef = document.getElementById('projects');
     const contactRef = document.getElementById('contact');
-    const headerRef = document.getElementById('root');
 
     // Get header buttons refs
     const aboutButton = document.querySelector('button.about');
