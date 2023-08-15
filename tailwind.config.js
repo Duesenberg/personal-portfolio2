@@ -52,6 +52,9 @@ export default {
       },
       borderWidth: {
         '1': '1px',
+      },
+      flex: {
+        '1/5': '.8',
       }
     },
   },
